@@ -4,8 +4,8 @@ import { useState } from "react";
 
 import MenuLink from "./MenuLink";
 
-import useLoginModal from "../hooks/useLoginModal";
-import useSignupModal from "../hooks/useSignupModal";
+import useLoginModal from "../../hooks/useLoginModal";
+import useSignupModal from "../../hooks/useSignupModal";
 import LogoutButton from "../LogoutButton";
 
 interface UserNavProps {
@@ -37,7 +37,7 @@ const UserNav: React.FC<UserNavProps> = ({
 
             {isOpen && (
                 <div className="w-[220px] absolute top-[60px] right-0 bg-white border border-gray-200 rounded-xl shadow-md flex flex-col cursor-pointer ">
-                    {userId ?  (
+                    {userId ? (
                         <LogoutButton />
                     ) : (
                         <>

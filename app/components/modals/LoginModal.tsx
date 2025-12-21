@@ -6,7 +6,7 @@ import { useState } from "react";
 
 import CustomButton from "../forms/CustomButton";
 
-import useLoginModal from "../hooks/useLoginModal";
+import useLoginModal from "../../hooks/useLoginModal";
 
 
 const LoginModal = () => {

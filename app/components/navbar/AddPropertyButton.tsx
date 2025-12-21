@@ -1,9 +1,9 @@
 'use client';
 
-import useAddPropertyModal from "../hooks/useAddPropertyModal";
+import useAddPropertyModal from "../../hooks/useAddPropertyModal";
 import AddPropertyModal from "../modals/AddPropertyModal";
 import React from "react";
-import useLoginModal from "../hooks/useLoginModal";
+import useLoginModal from "../../hooks/useLoginModal";
 
 interface AddPropertyButtonProps {
     userId?: string | null;
