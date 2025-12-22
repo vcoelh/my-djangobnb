@@ -67,7 +67,7 @@ const AddPropertyModal = () => {
             formData.append('category', dataCategory);
             formData.append('title', dataTitle);
             formData.append('description', dataDescription);
-            formData.append('price', dataPrice);
+            formData.append('price_per_night', dataPrice);
             formData.append('bedrooms', dataBedrooms);
             formData.append('bathrooms', dataBathrooms);
             formData.append('guests', dataGuests);
@@ -289,7 +289,7 @@ const AddPropertyModal = () => {
 
                         <CustomButton
                             label="Submit"
-                            onClick={() => setCurrentStep(4)}
+                            onClick={submitForm}
                         />
                     </div>
 
