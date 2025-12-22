@@ -17,6 +17,7 @@ const AddPropertyModal = () => {
     //
     // States
     const [currentStep, setCurrentStep] = useState(1);
+    const [errors, setErrors] = useState<string[]>([]);
     const [dataCategory, setDataCategory] = useState('');
     const [dataTitle, setDataTitle] = useState('');
     const [dataDescription, setDataDescription] = useState('');
@@ -85,6 +86,11 @@ const AddPropertyModal = () => {
                 addPropertymodal.close()
             } else {
                 console.log('ERROR')
+                const tmpErrors: string[] = Object.values(response).map((error: any) => {
+                    return error;
+                })
+
+                setErrors(tmpErrors);
             }
         }
     }
@@ -280,6 +286,18 @@ const AddPropertyModal = () => {
                             />
                         </label>
                     </div>
+
+                    {errors.map((error, index) => {
+                        return (
+                            <div
+                                key={index}
+                                className="p-6 mb-4 bg-airbnb text-white rounded-xl opacity-80"
+                            >
+                                {error}
+                            </div>
+                        )
+                    })}
+
                     <div className="flex flex-row items-center gap-4 w-full">
                         <CustomButton
                             className="bg-black hover:bg-gray-800"
