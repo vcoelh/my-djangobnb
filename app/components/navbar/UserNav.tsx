@@ -3,7 +3,7 @@
 import { useState } from "react";
 
 import MenuLink from "./MenuLink";
-
+import { useRouter } from "next/navigation";
 import useLoginModal from "../../hooks/useLoginModal";
 import useSignupModal from "../../hooks/useSignupModal";
 import LogoutButton from "../LogoutButton";
@@ -22,6 +22,8 @@ const UserNav: React.FC<UserNavProps> = ({
 
     const [isOpen, setIsOpen] = useState(false)
 
+    const router = useRouter();
+
     return (
         <div className="p-2 relative inline-block shadow rounded-full hover:bg-gray-100">
             <button
@@ -38,7 +40,25 @@ const UserNav: React.FC<UserNavProps> = ({
             {isOpen && (
                 <div className="w-[220px] absolute top-[60px] right-0 bg-white border border-gray-200 rounded-xl shadow-md flex flex-col cursor-pointer ">
                     {userId ? (
-                        <LogoutButton />
+                        <>
+                            <MenuLink
+                                label="My properties"
+                                onClick={() => {
+                                    setIsOpen(false)
+                                    router.push('/myproperties');
+                                }}
+
+                            />
+                            <MenuLink
+                                label="My Reservations"
+                                onClick={() => {
+                                    setIsOpen(false)
+                                    router.push('/myreservations');
+                                }}
+
+                            />
+                            <LogoutButton />
+                        </>
                     ) : (
                         <>
                             <MenuLink

@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import PropertyListItem from "./PropertyListItem";
 import apiService from "../services/apiService";
-import { TemplateContext } from "next/dist/shared/lib/app-router-context.shared-runtime";
+
 
 
 export type PropertyType = {
@@ -14,12 +14,24 @@ export type PropertyType = {
 
 }
 
+interface PropertyListProps {
+    landlord_id?: string | null;
+}
 
-const PropertyList = () => {
+
+const PropertyList: React.FC<PropertyListProps> = ({
+    landlord_id
+}) => {
     const [properties, setProperties] = useState<PropertyType[]>([])
 
     const getProperties = async () => {
-        const tmpProporties = await apiService.get('/api/properties/');
+        let url = '/api/properties/';
+
+        if (landlord_id) {
+            url += `?landlord_id=${landlord_id}`
+        }
+
+        const tmpProporties = await apiService.get(url);
         setProperties(tmpProporties.data)
     };
 
