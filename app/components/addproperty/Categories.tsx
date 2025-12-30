@@ -1,5 +1,3 @@
-import Image from "next/image";
-
 interface CategoriesProps {
     dataCategory: string;
     setCategory: (category: string) => void;
@@ -16,7 +14,7 @@ const Categories: React.FC<CategoriesProps> = ({
                     onClick={() => setCategory('Beach')}
                     className={`pb-4 flex flex-col items-center space-y-2 border-b-2 ${dataCategory == 'Beach' ? 'border-gray-800' : 'border-white'} opacity-60 hover:border-gray-700 hover:opacity-100`}
                 >
-                    <Image
+                    <img
                         src={'/icn_category.jpg'}
                         alt="Category - Beach"
                         width={20}
@@ -29,7 +27,7 @@ const Categories: React.FC<CategoriesProps> = ({
                     onClick={() => setCategory('Villas')}
                     className={`pb-4 flex flex-col items-center space-y-2 border-b-2 ${dataCategory == 'Villas' ? 'border-gray-800' : 'border-white'} opacity-60 hover:border-gray-700 hover:opacity-100`}
                 >
-                    <Image
+                    <img
                         src={'/icn_category.jpg'}
                         alt="Category - Beach"
                         width={20}
@@ -42,7 +40,7 @@ const Categories: React.FC<CategoriesProps> = ({
                     onClick={() => setCategory('Cabins')}
                     className={`pb-4 flex flex-col items-center space-y-2 border-b-2 ${dataCategory == 'Cabins' ? 'border-gray-800' : 'border-white'} opacity-60 hover:border-gray-700 hover:opacity-100`}
                 >
-                    <Image
+                    <img
                         src={'/icn_category.jpg'}
                         alt="Category - Beach"
                         width={20}
@@ -55,7 +53,7 @@ const Categories: React.FC<CategoriesProps> = ({
                     onClick={() => setCategory('Tiny homes')}
                     className={`pb-4 flex flex-col items-center space-y-2 border-b-2 ${dataCategory == 'Tiny homes' ? 'border-gray-800' : 'border-white'} opacity-60 hover:border-gray-700 hover:opacity-100`}
                 >
-                    <Image
+                    <img
                         src={'/icn_category.jpg'}
                         alt="Category - Beach"
                         width={20}

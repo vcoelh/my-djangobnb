@@ -1,11 +1,11 @@
 import { cookies } from "next/headers";
 import Link from "next/link";
 import apiService from "../components/services/apiService";
+import { getAccessToken } from "../lib/actions";
 
 const MyReservationsPage = async () => {
-    const cookieStore = await cookies();
-    const accessToken = cookieStore.get('session_access_token')?.value;
-
+    
+    const accessToken = await getAccessToken();
     let reservations: any[] = [];
 
     if (accessToken) {

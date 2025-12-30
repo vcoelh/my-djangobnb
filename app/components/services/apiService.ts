@@ -1,7 +1,7 @@
 import { getAccessToken } from "@/app/lib/actions";
 
 const apiService = {
-    get: async function (url: string, token: string | null): Promise<any> {
+    get: async function (url: string, token?: string | null): Promise<any> {
         console.log('get', url);
 
         return new Promise((resolve, reject) => {
