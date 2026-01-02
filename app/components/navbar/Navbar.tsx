@@ -15,10 +15,10 @@ const Navbar = async () => {
                 <div className="flex justify-between items-center">
                     <Link href="/">
                         <Image
-                            src="/logo.png"
+                            src="/logo_v2.png"
                             alt="DjangoBnb logo"
-                            width={180}
-                            height={38}
+                            width={130}
+                            height={30}
                         />
                     </Link>
 

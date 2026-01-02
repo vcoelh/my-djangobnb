@@ -20,7 +20,7 @@ const InboxPage = async () => {
     if (!userId) {
         return (
             <main className="max-w-[1500px] max-auto px-6 py-12">
-                <p>You need to be authenticated...</p>
+                <p>Entre na sua conta...</p>
             </main>
         )
     }
@@ -30,7 +30,7 @@ const InboxPage = async () => {
 
     return (
         <main className="max-w-[1500px] mx-auto px-6 pb-6 space-y-4">
-            <h1 className="my-6 text-2xl">Inbox</h1>
+            <h1 className="my-6 text-2xl">Conversas:</h1>
 
             {conversations.map((conversation: ConversationType) => {
                 return (

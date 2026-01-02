@@ -24,7 +24,7 @@ const Conversation: React.FC<ConversationProps> = ({
             <p className="mb-6 text-xl">{otherUser?.name}</p>
 
             <CustomButton
-                label="Go to conversation"
+                label="Ir para a conversa"
                 onClick={() => router.push(`/inbox/${conversation.id}`)}
                 className="text-airbnb-dark"
             />

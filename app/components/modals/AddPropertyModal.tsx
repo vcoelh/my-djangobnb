@@ -79,9 +79,8 @@ const AddPropertyModal = () => {
             const response = await apiService.post('/api/properties/create/', formData);
 
             if (response.success) {
-                console.log('SUCCESS');
-
                 router.push('/')
+                resetForm();
 
                 addPropertymodal.close()
             } else {
@@ -98,21 +97,32 @@ const AddPropertyModal = () => {
     //
     //
 
+    const resetForm = () => {
+        setDataCategory('');
+        setDataTitle('');
+        setDataDescription('');
+        setDataPrice('');
+        setDataBedrooms('');
+        setDataBathrooms('');
+        setDataGuests('');
+        setDataCountry(undefined);
+        setDataImage(null);
+        setErrors([]);
+        setCurrentStep(1); // Volta para o passo 1
+    }
 
     const content = (
         <>
             {currentStep == 1 ? (
                 <>
-                    <h2 className="mb-6 text-2xl">Choose Category</h2>
-
+                    <h2 className="pb-10 text-2xl flex justify-center">Escolha a categoria:</h2>
                     <Categories
                         dataCategory={dataCategory}
                         setCategory={(category) => setCategory(category)}
-
                     />
 
                     <CustomButton
-                        label="Next"
+                        label="Próximo"
                         onClick={() => setCurrentStep(2)}
                     />
                 </>
@@ -149,7 +159,7 @@ const AddPropertyModal = () => {
                         />
 
                         <CustomButton
-                            label="Next"
+                            label="Próximo"
                             onClick={() => setCurrentStep(3)}
                         />
                     </div>
@@ -215,7 +225,7 @@ const AddPropertyModal = () => {
                         />
 
                         <CustomButton
-                            label="Next"
+                            label="Próximo"
                             onClick={() => setCurrentStep(4)}
                         />
                     </div>
@@ -239,7 +249,7 @@ const AddPropertyModal = () => {
                         />
 
                         <CustomButton
-                            label="Next"
+                            label="Próximo"
                             onClick={() => setCurrentStep(5)}
                         />
                     </div>
@@ -322,7 +332,7 @@ const AddPropertyModal = () => {
             <Modal
                 isOpen={addPropertymodal.isOpen}
                 close={addPropertymodal.close}
-                label="Add property"
+                label="Adicionar exame"
                 content={content}
             />
         </>

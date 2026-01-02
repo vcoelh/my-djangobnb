@@ -42,7 +42,7 @@ const UserNav: React.FC<UserNavProps> = ({
                     {userId ? (
                         <>
                             <MenuLink
-                                label="Inbox"
+                                label="Mensagens"
                                 onClick={() => {
                                     setIsOpen(false)
                                     router.push('/inbox');
@@ -50,7 +50,7 @@ const UserNav: React.FC<UserNavProps> = ({
 
                             />
                             <MenuLink
-                                label="My properties"
+                                label="Meus exames"
                                 onClick={() => {
                                     setIsOpen(false)
                                     router.push('/myproperties');
@@ -78,14 +78,14 @@ const UserNav: React.FC<UserNavProps> = ({
                     ) : (
                         <>
                             <MenuLink
-                                label='Log in'
+                                label='Entrar'
                                 onClick={() => {
                                     setIsOpen(false);
                                     loginModal.open()
                                 }}
                             />
                             <MenuLink
-                                label='Sign up'
+                                label='Criar conta'
                                 onClick={() => {
                                     setIsOpen(false);
                                     signupModal.open()

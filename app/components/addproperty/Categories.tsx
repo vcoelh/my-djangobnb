@@ -7,59 +7,60 @@ const Categories: React.FC<CategoriesProps> = ({
     dataCategory,
     setCategory,
 }) => {
+
     return (
         <>
-            <div className="pt-3 cursor-pointer pb-6 flex items-center space-x-12">
+            <div className="pt-3 cursor-pointer pb-6 flex items-center justify-center space-x-12 w-full">
                 <div
-                    onClick={() => setCategory('Beach')}
-                    className={`pb-4 flex flex-col items-center space-y-2 border-b-2 ${dataCategory == 'Beach' ? 'border-gray-800' : 'border-white'} opacity-60 hover:border-gray-700 hover:opacity-100`}
+                    onClick={() => setCategory('beach')}
+                    className={`pb-4 flex flex-col items-center space-y-2 border-b-2 ${dataCategory == 'beach' ? 'border-gray-800 opacity-100' : 'border-white'} opacity-60 hover:border-gray-700 hover:opacity-100`}
                 >
                     <img
-                        src={'/icn_category.jpg'}
+                        src={'/category_icons/flask.svg'}
                         alt="Category - Beach"
-                        width={20}
-                        height={20}
+                        width={30}
+                        height={30}
                     />
-                    <span className="text-xs">Beach</span>
+                    <span className="text-xs">Toxicológico</span>
                 </div>
 
                 <div
-                    onClick={() => setCategory('Villas')}
-                    className={`pb-4 flex flex-col items-center space-y-2 border-b-2 ${dataCategory == 'Villas' ? 'border-gray-800' : 'border-white'} opacity-60 hover:border-gray-700 hover:opacity-100`}
+                    onClick={() => setCategory('villas')}
+                    className={`pb-4 flex flex-col items-center space-y-2 border-b-2 ${dataCategory == 'villas' ? 'border-gray-800 opacity-100' : 'border-white'} opacity-60 hover:border-gray-700 hover:opacity-100`}
                 >
                     <img
-                        src={'/icn_category.jpg'}
+                        src={'/category_icons/dna.svg'}
                         alt="Category - Beach"
-                        width={20}
-                        height={20}
+                        width={30}
+                        height={30}
                     />
-                    <span className="text-xs">Villas</span>
+                    <span className="text-xs">DNA</span>
                 </div>
 
                 <div
-                    onClick={() => setCategory('Cabins')}
-                    className={`pb-4 flex flex-col items-center space-y-2 border-b-2 ${dataCategory == 'Cabins' ? 'border-gray-800' : 'border-white'} opacity-60 hover:border-gray-700 hover:opacity-100`}
+                    onClick={() => setCategory('cabins')}
+                    className={`pb-4 flex flex-col items-center space-y-2 border-b-2 ${dataCategory == 'cabins' ? 'border-gray-800 opacity-100' : 'border-white'} opacity-60 hover:border-gray-700 hover:opacity-100`}
                 >
                     <img
-                        src={'/icn_category.jpg'}
+                        src={'/category_icons/users.svg'}
                         alt="Category - Beach"
-                        width={20}
-                        height={20}
+                        width={30}
+                        height={30}
                     />
-                    <span className="text-xs">Cabins</span>
+                    <span className="text-xs">Paternindade</span>
                 </div>
 
                 <div
-                    onClick={() => setCategory('Tiny homes')}
-                    className={`pb-4 flex flex-col items-center space-y-2 border-b-2 ${dataCategory == 'Tiny homes' ? 'border-gray-800' : 'border-white'} opacity-60 hover:border-gray-700 hover:opacity-100`}
+                    onClick={() => setCategory('tiny_homes')}
+                    className={`pb-4 flex flex-col items-center space-y-2 border-b-2 ${dataCategory == 'tiny_homes' ? 'border-gray-800 opacity-100' : 'border-white'} opacity-60 hover:border-gray-700 hover:opacity-100`}
                 >
                     <img
-                        src={'/icn_category.jpg'}
+                        src={'/category_icons/baby.svg'}
                         alt="Category - Beach"
-                        width={20}
-                        height={20}
+                        width={30}
+                        height={30}
                     />
-                    <span className="text-xs">Tiny homes</span>
+                    <span className="text-xs">Sexagem fetal</span>
                 </div>
             </div>
         </>

@@ -6,9 +6,9 @@ import { differenceInDays, format, eachDayOfInterval } from "date-fns";
 import DatePicker from "../forms/Calendar";
 import apiService from "../services/apiService";
 import useLoginModal from "@/app/hooks/useLoginModal";
-import { endOfDay, setDate } from "date-fns";
 
-const intialDateRange = {
+
+const initialDateRange = {
     startDate: new Date(),
     endDate: new Date(),
     key: 'selection',
@@ -34,7 +34,7 @@ const ReservationSidebar: React.FC<ReservationSidebarProps> = ({
     const [fee, setFee] = useState<number>(0);
     const [nights, setNights] = useState<number>(1);
     const [totalPrice, setTotalPrice] = useState<number>(0);
-    const [dateRange, setDateRange] = useState<Range>(intialDateRange);
+    const [dateRange, setDateRange] = useState<Range>(initialDateRange);
     const [minDate, setMinDate] = useState<Date>(new Date());
     const [bookedDates, setBookedDates] = useState<Date[]>([]);
     const [guests, setGuets] = useState<string>('1');
@@ -100,7 +100,7 @@ const ReservationSidebar: React.FC<ReservationSidebarProps> = ({
 
     useEffect(() => {
         getReservations();
-        
+
         if (dateRange.startDate && dateRange.endDate) {
             const dayCount = differenceInDays(
                 dateRange.endDate,
