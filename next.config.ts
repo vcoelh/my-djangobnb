@@ -6,10 +6,9 @@ const nextConfig: NextConfig = {
       {
         protocol: 'http',
         hostname: '147.182.200.106',
-        port: '',       // <--- Empty means standard Port 80
-        pathname: '/media/**' 
+        port: '',
+        pathname: '/media/**'
       },
-      // Keep localhost for development if needed
       {
         protocol: 'http',
         hostname: 'localhost',
