@@ -16,7 +16,7 @@ const Navbar = async () => {
                     <Link href="/">
                         <Image
                             src="/logo_v2.png"
-                            alt="DjangoBnb logo"
+                            alt="exameFacil logo"
                             width={130}
                             height={30}
                         />
