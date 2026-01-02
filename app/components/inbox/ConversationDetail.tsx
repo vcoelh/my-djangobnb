@@ -6,7 +6,6 @@ import { ConversationType } from "@/app/inbox/page";
 import useWebSocket, { ReadyState } from "react-use-websocket";
 import { MessageType } from "@/app/inbox/[id]/page";
 import { UserType } from "@/app/inbox/page";
-import { Suspense } from "react";
 
 interface ConversationDetailProps {
     conversation: ConversationType,
