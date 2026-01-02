@@ -47,20 +47,11 @@ const ConversationDetail: React.FC<ConversationDetailProps> = ({
 
         setNewMessage('');
 
-        setTimeout(() => {
-            scrollToBottom()
-        }, 50);
-
-    }
-
-    const scrollToBottom = () => {
-        if (messagesDiv.current) {
-            messagesDiv.current.scrollTop = messagesDiv.current.scrollHeight
-        }
     }
 
 
-    useEffect( () => {
+
+    useEffect(() => {
         if (lastJsonMessage && typeof lastJsonMessage === 'object' && 'name' in lastJsonMessage && 'body' in lastJsonMessage) {
             const message: MessageType = {
                 id: '',
@@ -75,19 +66,18 @@ const ConversationDetail: React.FC<ConversationDetailProps> = ({
             setRealtimeMessages((realtimeMessages) => [...realtimeMessages, message]);
         }
 
-        scrollToBottom();
     }, [lastJsonMessage]);
 
     console.log('messages', messages)
     return (
         <>
 
-            {messages.map((message, index) => (           
+            {messages.map((message, index) => (
                 <div
-                key={index}
-                className={
-                    `w=[80%] my-5 py-4 px-6 rounded-xl ${message.created_by.name == myUser?.name ? 'ml-[20%] bg-blue-200' : 'bg-gray-200' }`
-                }
+                    key={index}
+                    className={
+                        `w=[80%] my-5 py-4 px-6 rounded-xl ${message.created_by.name == myUser?.name ? 'ml-[20%] bg-blue-200' : 'bg-gray-200'}`
+                    }
                 >
                     <p className="font-bold text-gray-500">{message.created_by.name}</p>
                     <p>{message.body}</p>
@@ -96,10 +86,10 @@ const ConversationDetail: React.FC<ConversationDetailProps> = ({
             ))}
             {realtimeMessages.map((message, index) => (
                 <div
-                key={index}
-                className={
-                    `w=[80%] my-5 py-4 px-6 rounded-xl ${message.created_by.name == myUser?.name ? 'ml-[20%] bg-blue-200' : 'bg-gray-200' }`
-                }
+                    key={index}
+                    className={
+                        `w=[80%] my-5 py-4 px-6 rounded-xl ${message.created_by.name == myUser?.name ? 'ml-[20%] bg-blue-200' : 'bg-gray-200'}`
+                    }
                 >
                     <p className="font-bold text-gray-500">{message.name}</p>
                     <p>{message.body}</p>
